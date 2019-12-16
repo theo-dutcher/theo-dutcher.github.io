@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>SC2 MMR Hole</title>
+<title>When to Quit</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13133,7 +13133,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Starcraft II (SC2) is a top-down real-time strategy video game where players raise armys and wage war for control over distant star systems. A player picks one of the three science-fiction races (the Terrans, Zerg, and Protoss) then plays one of a variety of gamemodes ranging from single to multiplayer and competitive to casual. The game-mechanics have drawn interest from machine learning projects like Google's AlphaStar. It is a demanding and competitive title with a thriving professional scene.</p>
+<p>Starcraft II (SC2) is a top-down real-time strategy video game where players raise armys and wage war for control over distant star systems. A player picks one of the three science-fiction races (the Terrans, Zerg, and Protoss) then plays one of a variety of gamemodes ranging from single to multiplayer and competitive to casual. The game-mechanics have drawn interest from machine learning projects like <a href="https://deepmind.com/blog/alphastar-mastering-real-time-strategy-game-starcraft-ii/">Google's AlphaStar</a>. It is a demanding and competitive title with a thriving professional scene.</p>
 <p>That being said, in-game data is inaccessable (and very complex). Instead, this tutorial will analyze larger trends across many matches. There are several different opinions amonst the (highly vocal) SC2 playerbase about the optimal length of a play session for those griding their way up the ladder.</p>
 
 <pre><code>Hypothesis I: Losing streaks make players frustrated and committed, and their odds get worse and worse.
@@ -13620,6 +13620,13 @@ Now that we have a list of players and know with a high degree of confidence a p
 <span class="k">del</span> <span class="n">expanded_df</span><span class="p">[</span><span class="s1">&#39;prev_outcomes&#39;</span><span class="p">]</span>
 <span class="k">del</span> <span class="n">expanded_df</span><span class="p">[</span><span class="s1">&#39;prev_modes&#39;</span><span class="p">]</span>
 <span class="k">del</span> <span class="n">expanded_df</span><span class="p">[</span><span class="s1">&#39;prev_deltas&#39;</span><span class="p">]</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Here you can skip the first (roughly two-hour long) sections of code.</span>
+<span class="sd">I swear its the API&#39;s fault. I tried to speed it up.</span>
+
+<span class="sd">expanded_df = pd.read_csv(...)</span>
+<span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
 
     </div>
@@ -14095,6 +14102,14 @@ Now that we have a list of players and know with a high degree of confidence a p
 <p>If I were to extrapolate from this, I think the left-most node is pulling out a very specific (if not very large, with a sample size of 274) subgroup of people who validate Hypothesis I and Hypothesis II. The time cut off is 274 seconds--about five minutes. That means the person has played two consecutive short games, which is probably indicitive of agressive and gimmicky tactics. On the other hand, people who do not play so quickly and take a longer time between matches seem to do far better.</p>
 <p>Secondarily, the existance of the right-most node seems like a significant blow to Hypothesis III. Players who have just won a competitive game are at no disadvantage in the next match--their odds remain even. Consider my faith in the matchmaking algorithm fortified.</p>
 <p>There is definitely more work that could be done with this dataset, but together I think the main goal was accomplished. Here we worked over our parameters until we got down to the simplest model that captured the essence of the problem. That model, I would say, has done an excellent job of shedding light on our original questions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><i>I couldn't find a way to work this into the tutorial, but this [book](https://books.google.com/books?hl=en&lr=&id=vHFPYg5XwewC&oi=fnd&pg=PP11&dq=computational+psychology&ots=OtgM_yOgLi&sig=-VXtg6o2NGw-tJ3UgstvfwT8XN0#v=onepage&q=computational%20psychology&f=false) was a real rabbit hole for me. My work here is arguably psychological in nature (abeit very primitive), and so it is natural to wonder how much machine learning is an appropriate way to address procedural, self-reflective consciousness. Anyway, have a nice break.</i></p>
 
 </div>
 </div>
